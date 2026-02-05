@@ -36,13 +36,11 @@ int wikipediaExamp()
   do {                                                           \
     unsigned long long a__ = (x);                                \
     size_t bits__ = sizeof(x) * 8;                               \
-    printf(#x ": ");                                             \
-    while (bits__--) {                    \
-     /* printf("\n res: %llu", a__ & (1ULL << bits__)); printf("\n1ULL << bits__: %llu\n", 1ULL << bits__);  printf("\n a__: %d\n", a__); */  \
+    while (bits__--) {                                           \
       putchar(a__ &(1ULL << bits__) ? '1' : '0');                \
     }                                                            \
     putchar('\n');                                               \
-  } while (0) \
+  } while (0)                                                    \
 
 // Don't do this because -> https://stackoverflow.com/questions/2687569/c-do-while0?noredirect=1&lq=1
 #define SAFE_FREE(x) if ((x) != NULL) { free(x); x=NULL; }
