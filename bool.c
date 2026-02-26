@@ -30,10 +30,12 @@ int main() {
   SomeThg *p1 = &b;
 
   printf("sizeof struct %lu\n", sizeof(b));
-print_bits(b.p3);
   p1->p3 = -1;
   printf("URMOM: %d\n", p1->p3);
-  printf("URMOM: %lu", sizeof(struct test));
+  printf("URMOM: %lu\n", sizeof(struct test));
+
+  bool u = true;
+  print_bits(u);
 
   return 0;
 }
