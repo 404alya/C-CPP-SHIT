@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <sys/time.h>
+#include <unistd.h>
 
 int main(void)
 {
@@ -11,11 +12,15 @@ int main(void)
 
   // Do something
   // ...
+  //
+  sleep(2);
 
   // Stop timer
   gettimeofday(&t2, NULL);
 
   // Compute and print the elapsed time in milliseconds:
+
+  printf("a: %lu\n", t1.tv_sec);
 
   // Seconds to milliseconds
   elapsedTime = (t2.tv_sec - t1.tv_sec) * 1000.0;
@@ -25,3 +30,5 @@ int main(void)
 
   printf("%f ms.\n", elapsedTime);
 }
+
+
