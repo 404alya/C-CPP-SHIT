@@ -9,14 +9,11 @@ int main() {
   int status;
   char path[PATH_MAX];
 
-  fp = popen("clang", "r");
+  fp = popen("ls -a", "r");
   if (fp == NULL) {
     perror("popen");
     exit(EXIT_FAILURE);
   }
-  
-  while (fgets(path, PATH_MAX, fp) != NULL)
-      printf("%s", path);
 
   status = pclose(fp);
   if (status == -1) {
